@@ -1,5 +1,9 @@
 <%- include('index.ejs')%>
-<form action="http://localhost:3000/user/add" method="post" style="margin-top: 10vh">
+<form
+  action="http://localhost:3000/user/add"
+  method="post"
+  style="margin-top: 10vh"
+>
   <input type="text" name="name" id="" placeholder="name" />
   <br />
   <input type="text" name="description" id="" placeholder="description" />
@@ -10,7 +14,7 @@
   <br />
   <input type="text" name="variant" id="" placeholder="variant" />
   <br />
-  <input type="text" name="tritype" id="" placeholder="tritype" />
+  <input type="number" name="tritype" id="" placeholder="tritype" />
   <br />
   <input type="text" name="socionics" id="" placeholder="socionics" />
   <br />
@@ -28,18 +32,17 @@
   />
 </form>
 <script>
-  function submitForm(e) {
+  async function submitForm(e) {
     e.preventDefault();
-    var form = document.getElementById("userForm");
-    var formData = new FormData(form);
-
-    // You can now access the form data using formData.get("fieldName")
-    // For example:
-    var name = formData.get("name");
-    var description = formData.get("description");
-    var mbti = formData.get("mbti");
-    console.log("Name:", name);
-    console.log("Description:", description);
-    console.log("MBTI:", mbti);
+    const form = document.getElementById("userForm");
+    const formData = new FormData(form);
+    const name = formData.get("name");
+    const description = formData.get("description");
+    const mbti = formData.get("mbti");
+    const data = { name, description, mbti };
+    fetch("http://localhost:3000/user/add", {
+      method: "post",
+      body: JSON.stringify(data),
+    });
   }
 </script>

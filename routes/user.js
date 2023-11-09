@@ -18,12 +18,12 @@ module.exports = function () {
     })
   });
   router.post('/add', async function (req, res, next) {
-    const { id, name, description, mbti, enneagram, variant, tritype, socionics, sloan, psyche, image } = req.body;
-    console.log('hii');
-    // const user = new Profile({ name, description, mbti, enneagram, variant, tritype, socionics, sloan, psyche, image });
-    // await user.save();
-    res.status(200).json({
-      success: true
+    const { name, description, mbti, enneagram, variant, tritype, socionics, sloan, psyche, image } = req.body;
+    const user = new Profile({ name, description, mbti, enneagram, variant, tritype, socionics, sloan, psyche, image });
+    await user.save();
+    const profiles = await Profile.find();
+    res.render('profile_template', {
+      profile: profiles,
     });
   });
   router.get('/:id', async function (req, res, next) {
