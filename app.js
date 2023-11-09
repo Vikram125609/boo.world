@@ -1,15 +1,15 @@
-'use strict';
-
 const express = require('express');
 const app = express();
-const port =  process.env.PORT || 3000;
+const { connectDatabase } = require('./Database');
+connectDatabase();
 
-// set the view engine to ejs
 app.set('view engine', 'ejs');
+app.use(express.json({limit:'10mb'}));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use('/', require('./routes/index')());
+app.use('/user', require('./routes/user')());
 
-// routes
-app.use('/', require('./routes/profile')());
-
-// start server
-const server = app.listen(port);
-console.log('Express started. Listening on %s', port);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+    console.log(`Server is running at port ${port}`)
+});
