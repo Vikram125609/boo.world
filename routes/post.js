@@ -33,14 +33,28 @@ module.exports = function () {
     });
     router.post('/like', async function (req, res, next) {
         const { post_id, user_id } = req.body;
-        const post = await Post.findByIdAndUpdate(post_id,
-            {
-                $push: {
-                    'likes': user_id
-                }
-            },
-            { new: true }
-        );
+        const check = await Post.findById(post_id);
+        let post;
+        if (check.likes.includes(new mongoose.Types.ObjectId(user_id))) {
+            post = await Post.findByIdAndUpdate(post_id,
+                {
+                    $pull: {
+                        'likes': user_id
+                    }
+                },
+                { new: true }
+            );
+        }
+        else {
+            post = await Post.findByIdAndUpdate(post_id,
+                {
+                    $push: {
+                        'likes': user_id
+                    }
+                },
+                { new: true }
+            );
+        }
         res.status(200).json({
             post: post
         });
