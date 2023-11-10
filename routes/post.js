@@ -91,5 +91,63 @@ module.exports = function () {
             });
         }
     });
+    router.get('/:id/comment', async function (req, res, next) {
+        const { id } = req.params;
+        const { sort } = req.query;
+        if (sort === 'best') {
+            const post = await Post.aggregate([
+                {
+                    $match: {
+                        _id: new mongoose.Types.ObjectId(id)
+                    }
+                },
+                {
+                    $unwind: '$comments'
+                },
+                {
+                    $lookup: {
+                        foreignField: '_id',
+                        localField: 'comments',
+                        from: 'comments',
+                        as: 'comments'
+                    }
+                },
+                {
+                    $group: {
+                        _id: '$_id',
+                        user_id: { $first: '$user_id' },
+                        description: { $first: '$description' },
+                        image: { $first: '$image' },
+                        comments: { $push: { $arrayElemAt: ['$comments', 0] } },
+                        likes: { $first: '$likes' },
+                        __v: { $first: '$__v' },
+                    }
+                },
+                {
+                    $unwind: "$comments"
+                },
+                {
+                    $sort: { "comments.voting": -1 }
+                },
+                {
+                    $group: {
+                        _id: '$_id',
+                        user_id: { $first: '$user_id' },
+                        description: { $first: '$description' },
+                        image: { $first: '$image' },
+                        comments: { $push: '$comments' },
+                        likes: { $first: '$likes' },
+                        __v: { $first: '$__v' }
+                    }
+                }
+            ]);
+            res.status(200).json({
+                post: post
+            });
+        }
+        else {
+
+        }
+    });
     return router;
 }
