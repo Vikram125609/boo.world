@@ -12,10 +12,10 @@ const postSchema = new mongoose.Schema({
         type: String,
         default: "https://avatars.githubusercontent.com/u/93823479?v=4"
     },
-    likes: {
-        type: Number,
-        default: 0
-    },
+    likes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'profile'
+    }],
     comments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'comment'
