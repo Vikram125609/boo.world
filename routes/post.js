@@ -4,8 +4,13 @@ const Profile = require('../models/profile');
 const Post = require('../models/post');
 const Comment = require('../models/comment');
 const { default: mongoose } = require('mongoose');
+const { postWithCommentsNoLikes, postWithLikesNoComments, postWithLikesComments } = require('../utils/queries');
 
 module.exports = function () {
+    router.get('/all', async function (req, res, next) {
+        const posts = await Post.find().populate('user_id', 'name description mbti enneagram variant tritype socionics sloan psyche image');
+        res.status(200).json({ posts: posts });
+    });
     router.post('/create', async function (req, res, next) {
         const { user_id, description, image } = req.body;
         const post = new Post({ user_id, description, image });
@@ -61,74 +66,30 @@ module.exports = function () {
     });
     router.get('/:id', async function (req, res, next) {
         const { id } = req.params;
-        const post = await Post.aggregate([
-            {
-                $match: {
-                    _id: new mongoose.Types.ObjectId(id)
-                }
-            },
-            {
-                $unwind: '$comments'
-            },
-            {
-                $lookup: {
-                    foreignField: '_id',
-                    localField: 'comments',
-                    from: 'comments',
-                    as: 'comments'
-                }
-            },
-            {
-                $unwind: '$comments'
-            },
-            {
-                $lookup: {
-                    from: 'profiles',
-                    localField: 'comments.user_id',
-                    foreignField: '_id',
-                    as: 'comments.user_id'
-                }
-            },
-            {
-                $unwind: '$comments.user_id'
-            },
-            {
-                $group: {
-                    _id: '$_id',
-                    user_id: { $first: '$user_id' },
-                    description: { $first: '$description' },
-                    image: { $first: '$image' },
-                    comments: { $push: '$comments' },
-                    __v: { $first: '$__v' },
-                    likes: { $first: '$likes' }
-                }
-            },
-            {
-                $unwind: '$likes'
-            },
-            {
-                $lookup: {
-                    foreignField: '_id',
-                    localField: 'likes',
-                    from: 'profiles',
-                    as: 'likes'
-                }
-            },
-            {
-                $group: {
-                    _id: '$_id',
-                    user_id: { $first: '$user_id' },
-                    description: { $first: '$description' },
-                    image: { $first: '$image' },
-                    comments: { $first: '$comments' },
-                    likes: { $push: { $arrayElemAt: ['$likes', 0] } },
-                    __v: { $first: '$__v' },
-                }
-            },
-        ]);
-        res.status(200).json({
-            post: post
-        });
+        const post = await Post.findById(id);
+        if (post.comments.length === 0 && post.likes.length === 0) {
+            res.status(200).json({
+                post: post
+            });
+        }
+        else if (post.comments.length !== 0 && post.likes.length === 0) {
+            const post = await postWithCommentsNoLikes(id);
+            res.status(200).json({
+                post: post
+            });
+        }
+        else if (post.comments.length === 0 && post.likes.length !== 0) {
+            const post = await postWithLikesNoComments(id);
+            res.status(200).json({
+                post: post
+            });
+        }
+        else {
+            const post = await postWithLikesComments(id);
+            res.status(200).json({
+                post: post
+            });
+        }
     });
     return router;
 }
