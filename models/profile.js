@@ -40,6 +40,6 @@ const profileSchema = new mongoose.Schema({
         type: String,
         default: "https://avatars.githubusercontent.com/u/93823479?v=4"
     }
-});
+}, { timestamps: true });
 const Profile = mongoose.model('profile', profileSchema);
 module.exports = Profile;

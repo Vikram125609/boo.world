@@ -20,6 +20,6 @@ const commentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'profile'
     }]
-});
+}, { timestamps: true });
 const Comment = mongoose.model('comment', commentSchema);
 module.exports = Comment;
