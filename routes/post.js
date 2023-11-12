@@ -33,7 +33,8 @@ module.exports = function () {
         await comment_on_post.save();
         res.status(200).json({
             comment: comment_on_post,
-            post: post
+            post: post,
+            message: 'Commented Successfully'
         });
     });
     router.post('/like', async function (req, res, next) {
