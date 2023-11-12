@@ -62,7 +62,8 @@ module.exports = function () {
             );
         }
         res.status(200).json({
-            post: post
+            post: post,
+            message: 'Liked Successfully'
         });
     });
     router.get('/:id', async function (req, res, next) {
@@ -70,25 +71,29 @@ module.exports = function () {
         const post = await Post.findById(id);
         if (post.comments.length === 0 && post.likes.length === 0) {
             res.status(200).json({
-                post: post
+                post: post,
+                message: 'Get Post Using Id'
             });
         }
         else if (post.comments.length !== 0 && post.likes.length === 0) {
             const post = await postWithCommentsNoLikes(id);
             res.status(200).json({
-                post: post
+                post: post,
+                message: 'Get Post Using Id'
             });
         }
         else if (post.comments.length === 0 && post.likes.length !== 0) {
             const post = await postWithLikesNoComments(id);
             res.status(200).json({
-                post: post
+                post: post,
+                message: 'Get Post Using Id'
             });
         }
         else {
             const post = await postWithLikesComments(id);
             res.status(200).json({
-                post: post
+                post: post,
+                message: 'Get Post Using Id'
             });
         }
     });
@@ -143,7 +148,8 @@ module.exports = function () {
                 }
             ]);
             res.status(200).json({
-                post: post
+                post: post,
+                message: 'best comments'
             });
         }
         else {
@@ -194,7 +200,8 @@ module.exports = function () {
                 }
             ]);
             res.status(200).json({
-                post: post
+                post: post,
+                message: 'recent comments'
             });
         }
     });
