@@ -9,13 +9,13 @@ const { postWithCommentsNoLikes, postWithLikesNoComments, postWithLikesComments 
 module.exports = function () {
     router.get('/all', async function (req, res, next) {
         const posts = await Post.find().populate('user_id', 'name description mbti enneagram variant tritype socionics sloan psyche image');
-        res.status(200).json({ posts: posts });
+        res.status(200).json({ posts: posts, message: 'All Post' });
     });
     router.post('/create', async function (req, res, next) {
         const { user_id, description, image } = req.body;
         const post = new Post({ user_id, description, image });
         await post.save();
-        res.status(200).json({ post: post });
+        res.status(200).json({ post: post, message: 'Post Created Successfully' });
     });
     router.post('/comment', async function (req, res, next) {
         const { user_id, post_id, comment } = req.body;
