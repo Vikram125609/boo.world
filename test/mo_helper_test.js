@@ -7,6 +7,8 @@ chai.use(chaiHttp);
 const { expect } = chai;
 
 before(async () => {
+    let mongoServer = await MongoMemoryServer.create();
+    const mongoUri = mongoServer.getUri();
     await mongoose.connect('mongodb://localhost:27018/Boo');
 });
 

@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const { connectDatabase } = require('./Database');
-connectDatabase();
+// connectDatabase();
 
 app.set('view engine', 'ejs');
 app.use(express.json({ limit: '10mb' }));
