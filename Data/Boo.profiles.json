@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "654e33cfc19e3756b222c2f6"
+  },
+  "name": "Giridhar Gopal",
+  "description": "Adolph Larrue Martinez III.",
+  "mbti": "ISFJ",
+  "enneagram": "9w3",
+  "variant": "sp/so",
+  "tritype": 725,
+  "socionics": "SEE",
+  "sloan": "RCOEN",
+  "psyche": "FEVL",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "createdAt": {
+    "$date": "2023-11-10T13:44:47.732Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-10T13:44:47.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654e33e0c19e3756b222c2f9"
+  },
+  "name": "Premanand Ji Maharaj",
+  "description": "Adolph Larrue Martinez III.",
+  "mbti": "ISFJ",
+  "enneagram": "9w3",
+  "variant": "sp/so",
+  "tritype": 725,
+  "socionics": "SEE",
+  "sloan": "RCOEN",
+  "psyche": "FEVL",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "createdAt": {
+    "$date": "2023-11-10T13:45:04.253Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-10T13:45:04.253Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654e33f4c19e3756b222c2fc"
+  },
+  "name": "Sadhvi Devavani",
+  "description": "Adolph Larrue Martinez III.",
+  "mbti": "ISFJ",
+  "enneagram": "9w3",
+  "variant": "sp/so",
+  "tritype": 725,
+  "socionics": "SEE",
+  "sloan": "RCOEN",
+  "psyche": "FEVL",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "createdAt": {
+    "$date": "2023-11-10T13:45:24.045Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-10T13:45:24.045Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "654e3474daff20794cb68bcc"
+  },
+  "name": "Vikram Singh",
+  "description": "Adolph Larrue Martinez III.",
+  "mbti": "ISFJ",
+  "enneagram": "9w3",
+  "variant": "sp/so",
+  "tritype": 725,
+  "socionics": "SEE",
+  "sloan": "RCOEN",
+  "psyche": "FEVL",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "createdAt": {
+    "$date": "2023-11-10T13:47:32.359Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-10T13:47:32.359Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550a10fae4bd209df9bef6d"
+  },
+  "name": "Kishori Ji",
+  "description": "Adolph Larrue Martinez III.",
+  "mbti": "ISFJ",
+  "enneagram": "9w3",
+  "variant": "sp/so",
+  "tritype": 725,
+  "socionics": "SEE",
+  "sloan": "RCOEN",
+  "psyche": "FEVL",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "createdAt": {
+    "$date": "2023-11-12T09:55:27.530Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T09:55:27.530Z"
+  },
+  "__v": 0
+}]

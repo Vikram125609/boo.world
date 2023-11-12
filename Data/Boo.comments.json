@@ -1,0 +1,121 @@
+[{
+  "_id": {
+    "$oid": "6550cc5896d011787a38e12e"
+  },
+  "user_id": {
+    "$oid": "654e33cfc19e3756b222c2f6"
+  },
+  "post_id": {
+    "$oid": "6550cb1b96d011787a38e124"
+  },
+  "comment": "comment by giridhar gopal",
+  "voting": 5,
+  "voters": [
+    {
+      "$oid": "654e33cfc19e3756b222c2f6"
+    },
+    {
+      "$oid": "654e33e0c19e3756b222c2f9"
+    },
+    {
+      "$oid": "654e33f4c19e3756b222c2fc"
+    },
+    {
+      "$oid": "654e3474daff20794cb68bcc"
+    },
+    {
+      "$oid": "6550a10fae4bd209df9bef6d"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-11-12T13:00:08.089Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T13:15:23.693Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550cd0796d011787a38e131"
+  },
+  "user_id": {
+    "$oid": "654e33e0c19e3756b222c2f9"
+  },
+  "post_id": {
+    "$oid": "6550cb1b96d011787a38e124"
+  },
+  "comment": "comment by premanand ji maharaj",
+  "voting": 0,
+  "voters": [],
+  "createdAt": {
+    "$date": "2023-11-12T13:03:03.094Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T13:03:03.094Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550cd7196d011787a38e134"
+  },
+  "user_id": {
+    "$oid": "654e33f4c19e3756b222c2fc"
+  },
+  "post_id": {
+    "$oid": "6550cb1b96d011787a38e124"
+  },
+  "comment": "comment by sadhvi devavani ji",
+  "voting": 0,
+  "voters": [],
+  "createdAt": {
+    "$date": "2023-11-12T13:04:49.494Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T13:04:49.494Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550cdae96d011787a38e137"
+  },
+  "user_id": {
+    "$oid": "654e3474daff20794cb68bcc"
+  },
+  "post_id": {
+    "$oid": "6550cb1b96d011787a38e124"
+  },
+  "comment": "comment by vikram singh",
+  "voting": 0,
+  "voters": [],
+  "createdAt": {
+    "$date": "2023-11-12T13:05:50.890Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T13:05:50.890Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550cdbe96d011787a38e13a"
+  },
+  "user_id": {
+    "$oid": "6550a10fae4bd209df9bef6d"
+  },
+  "post_id": {
+    "$oid": "6550cb1b96d011787a38e124"
+  },
+  "comment": "comment by vikram singh",
+  "voting": 0,
+  "voters": [],
+  "createdAt": {
+    "$date": "2023-11-12T13:06:06.898Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T13:06:06.898Z"
+  },
+  "__v": 0
+}]

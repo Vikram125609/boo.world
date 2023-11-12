@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "d2008911-6e08-440c-98cb-450ab71000b5",
+		"name": "Boo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19014838"
+	},
+	"item": [
+		{
+			"name": "user/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"name\": \"Sadhvi Devpoorna\",\n    \"description\": \"Adolph Larrue Martinez III.\",\n    \"mbti\": \"ISFJ\",\n    \"enneagram\": \"9w3\",\n    \"variant\": \"sp/so\",\n    \"tritype\": 725,\n    \"socionics\": \"SEE\",\n    \"sloan\": \"RCOEN\",\n    \"psyche\": \"FEVL\",\n    \"image\": \"https://avatars.githubusercontent.com/u/93823479?v=4\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post/create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"654ce04bd4fc592091ce140f\",\n    \"description\":\"Sadhvi Ji Ke Charno Main Pranam\",\n    \"image\":\"https://avatars.githubusercontent.com/u/93823479?v=4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/post/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"post",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post/comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\":\"654cdd63a6f974799cb5b937\",\n    \"post_id\":\"654d3f49832a451f202d428e\",\n    \"comment\":\"This is comment done by Giridhar Gopal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/post/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"post",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post/like",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"post_id\":\"654d3f49832a451f202d428e\",\n    \"user_id\":\"654cdd63a6f974799cb5b937\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/post/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"post",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/post/654d3f49832a451f202d428e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"post",
+						"654d3f49832a451f202d428e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment/:id/vote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/comment/654d3f49832a451f202d428e/vote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comment",
+						"654d3f49832a451f202d428e",
+						"vote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/post/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"post",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comment/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/comment/654e03dc998a6ab2f6bace53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"comment",
+						"654e03dc998a6ab2f6bace53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post/comment?sort=best",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/post/654d3f49832a451f202d428e/comment?sort=best",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"post",
+						"654d3f49832a451f202d428e",
+						"comment"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "best"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post/comment?sort=recent",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

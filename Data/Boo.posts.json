@@ -1,0 +1,117 @@
+[{
+  "_id": {
+    "$oid": "6550cb1b96d011787a38e124"
+  },
+  "user_id": "654e33cfc19e3756b222c2f6",
+  "description": "this post is created by giridhar gopal ji",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "likes": [
+    {
+      "$oid": "654e33cfc19e3756b222c2f6"
+    },
+    {
+      "$oid": "654e33e0c19e3756b222c2f9"
+    },
+    {
+      "$oid": "654e33f4c19e3756b222c2fc"
+    },
+    {
+      "$oid": "654e3474daff20794cb68bcc"
+    },
+    {
+      "$oid": "6550a10fae4bd209df9bef6d"
+    }
+  ],
+  "comments": [
+    {
+      "$oid": "6550cc5896d011787a38e12e"
+    },
+    {
+      "$oid": "6550cd0796d011787a38e131"
+    },
+    {
+      "$oid": "6550cd7196d011787a38e134"
+    },
+    {
+      "$oid": "6550cdae96d011787a38e137"
+    },
+    {
+      "$oid": "6550cdbe96d011787a38e13a"
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-11-12T12:54:51.794Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T13:10:59.875Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550cb3096d011787a38e126"
+  },
+  "user_id": "654e33e0c19e3756b222c2f9",
+  "description": "this post is created by premanand ji maharaj",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "likes": [],
+  "comments": [],
+  "createdAt": {
+    "$date": "2023-11-12T12:55:12.583Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T12:55:12.583Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550cb4796d011787a38e128"
+  },
+  "user_id": "654e33f4c19e3756b222c2fc",
+  "description": "this post is created by sadhvi devavani ji",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "likes": [],
+  "comments": [],
+  "createdAt": {
+    "$date": "2023-11-12T12:55:35.497Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T12:55:35.497Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550cb5896d011787a38e12a"
+  },
+  "user_id": "654e3474daff20794cb68bcc",
+  "description": "this post is created by vikram singh",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "likes": [],
+  "comments": [],
+  "createdAt": {
+    "$date": "2023-11-12T12:55:52.295Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T12:55:52.295Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6550cb6a96d011787a38e12c"
+  },
+  "user_id": "6550a10fae4bd209df9bef6d",
+  "description": "this post is created by kishor ji",
+  "image": "https://avatars.githubusercontent.com/u/93823479?v=4",
+  "likes": [],
+  "comments": [],
+  "createdAt": {
+    "$date": "2023-11-12T12:56:10.500Z"
+  },
+  "updatedAt": {
+    "$date": "2023-11-12T12:56:10.500Z"
+  },
+  "__v": 0
+}]
